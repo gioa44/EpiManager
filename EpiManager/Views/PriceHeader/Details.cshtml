@@ -4,6 +4,8 @@
     ViewBag.Title = "Details";
 }
 
+@*giorgi abashidze added this line*@
+
 <h2>Details</h2>
 
 <div>
@@ -17,29 +19,6 @@
         <dd>
             @Html.DisplayFor(model => model.PriceName)
         </dd>
-
-
-        @*@foreach (var item in Model.PriceLines)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PriceHeader.PriceName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EpiKindId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.PriceLineId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.PriceLineId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.PriceLineId })
-                </td>
-            </tr>
-        }*@
-
-
     </dl>
 </div>
 <p>
