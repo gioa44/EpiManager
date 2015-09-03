@@ -10,6 +10,7 @@ namespace EpiManager.Models
         public int PriceHeaderId { get; set; }
         public int PriceLineId { get; set; }
         public int EpiKindId { get; set; }
+        public virtual EpiKind EpiKind { get; set; }
         public decimal Price { get; set; }
 
         public virtual PriceHeader PriceHeader { get; set; }

@@ -17,6 +17,33 @@
         <dd>
             @Html.DisplayFor(model => model.PriceName)
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceLines)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>ეპილაციის ზონა</th>
+                    <th>ფასი</th>
+                </tr>
+
+                @foreach (var item in Model.PriceLines)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EpiKind.EpiKindName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                    </tr>
+                }
+            </table>
+
+
+
+        </dd>
     </dl>
 </div>
 <p>

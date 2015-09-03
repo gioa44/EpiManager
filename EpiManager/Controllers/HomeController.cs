@@ -12,7 +12,6 @@ namespace EpiManager.Controllers
         EpiContext db = new EpiContext();
         public ActionResult Index()
         {
-            var lstTemp = db.EpiKind.ToList();
             return View();
         }
 

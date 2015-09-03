@@ -7,7 +7,7 @@ using EpiManager.Models;
 namespace EpiManager.DAL
 {
 
-    public class EpiDbInitializer : System.Data.Entity.CreateDatabaseIfNotExists<EpiContext>
+    public class EpiDbInitializer : System.Data.Entity.DropCreateDatabaseAlways<EpiContext>
     {
         protected override void Seed(EpiContext context)
         {
