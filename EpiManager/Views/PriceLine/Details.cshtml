@@ -1,0 +1,42 @@
+﻿@model EpiManager.Models.PriceLine
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PriceLine</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceHeader.PriceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceHeader.PriceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EpiKindId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EpiKindId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PriceLineId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
