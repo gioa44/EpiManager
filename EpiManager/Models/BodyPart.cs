@@ -6,12 +6,11 @@ using System.Web;
 
 namespace EpiManager.Models
 {
-    public class EpiKind
+    public class BodyPart
     {
-
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int EpiKindId { get; set; }
-        public string EpiKindName { get; set; }
-        public string EpiKindDescrip { get; set; }
+        public int BodyPartId { get; set; }
+        public string BodyPartName { get; set; }
+        public string BodyPartDescrip { get; set; }
     }
 }

@@ -16,8 +16,8 @@ namespace EpiManager.DAL
 
         }
 
-        public DbSet<EpiKind> EpiKind { get; set; }
-        public DbSet<PriceHeader> PriceHeader { get; set; }
+        public DbSet<BodyPart> BodyParts { get; set; }
+        public DbSet<PriceHeader> PriceHeaders { get; set; }
         public DbSet<PriceLine> PriceLines { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Appointment> Appointments { get; set; }

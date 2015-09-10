@@ -40,7 +40,7 @@ namespace EpiManager.Controllers
         // GET: PriceLine/Create
         public ActionResult Create()
         {
-            ViewBag.PriceHeaderId = new SelectList(db.PriceHeader, "PriceHeaderId", "PriceName");
+            ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName");
             return View();
         }
 
@@ -49,7 +49,7 @@ namespace EpiManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PriceLineId,PriceHeaderId,EpiKindId,Price")] PriceLine priceLine)
+        public ActionResult Create([Bind(Include = "PriceLineId,PriceHeaderId,BodyPartId,Price")] PriceLine priceLine)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace EpiManager.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PriceHeaderId = new SelectList(db.PriceHeader, "PriceHeaderId", "PriceName", priceLine.PriceHeaderId);
+            ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", priceLine.PriceHeaderId);
             return View(priceLine);
         }
 
@@ -74,7 +74,7 @@ namespace EpiManager.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.PriceHeaderId = new SelectList(db.PriceHeader, "PriceHeaderId", "PriceName", priceLine.PriceHeaderId);
+            ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", priceLine.PriceHeaderId);
             return View(priceLine);
         }
 
@@ -83,7 +83,7 @@ namespace EpiManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PriceLineId,PriceHeaderId,EpiKindId,Price")] PriceLine priceLine)
+        public ActionResult Edit([Bind(Include = "PriceLineId,PriceHeaderId,BodyPartId,Price")] PriceLine priceLine)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace EpiManager.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PriceHeaderId = new SelectList(db.PriceHeader, "PriceHeaderId", "PriceName", priceLine.PriceHeaderId);
+            ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", priceLine.PriceHeaderId);
             return View(priceLine);
         }
 

@@ -128,7 +128,7 @@
     </Compile>
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\EpiKind.cs" />
+    <Compile Include="Models\BodyPart.cs" />
     <Compile Include="Models\PriceHeader.cs" />
     <Compile Include="Models\PriceLines.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

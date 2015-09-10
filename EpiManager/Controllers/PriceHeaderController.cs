@@ -18,7 +18,7 @@ namespace EpiManager.Controllers
         // GET: PriceHeader
         public ActionResult Index()
         {
-            return View(db.PriceHeader.ToList());
+            return View(db.PriceHeaders.ToList());
         }
 
         // GET: PriceHeader/Details/5
@@ -28,7 +28,7 @@ namespace EpiManager.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PriceHeader priceHeader = db.PriceHeader.Find(id);
+            PriceHeader priceHeader = db.PriceHeaders.Find(id);
             if (priceHeader == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace EpiManager.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PriceHeader.Add(priceHeader);
+                db.PriceHeaders.Add(priceHeader);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace EpiManager.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PriceHeader priceHeader = db.PriceHeader.Find(id);
+            PriceHeader priceHeader = db.PriceHeaders.Find(id);
             if (priceHeader == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace EpiManager.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PriceHeader priceHeader = db.PriceHeader.Find(id);
+            PriceHeader priceHeader = db.PriceHeaders.Find(id);
             if (priceHeader == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace EpiManager.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PriceHeader priceHeader = db.PriceHeader.Find(id);
-            db.PriceHeader.Remove(priceHeader);
+            PriceHeader priceHeader = db.PriceHeaders.Find(id);
+            db.PriceHeaders.Remove(priceHeader);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

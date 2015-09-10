@@ -11,15 +11,16 @@ namespace EpiManager.DAL
     {
         protected override void Seed(EpiContext context)
         {
-            var epikinds = new List<EpiKind>
+            var bodyparts
+                = new List<BodyPart>
             {
-                new EpiKind{EpiKindId = 1, EpiKindName = "Face"},
-                new EpiKind{EpiKindId = 2, EpiKindName = "Leg"},
-                new EpiKind{EpiKindId = 3, EpiKindName = "Shin"},
-                new EpiKind{EpiKindId = 4, EpiKindName = "Thigh"}
+                new BodyPart{BodyPartId = 1, BodyPartName = "Face"},
+                new BodyPart{BodyPartId = 2, BodyPartName = "Leg"},
+                new BodyPart{BodyPartId = 3, BodyPartName = "Shin"},
+                new BodyPart{BodyPartId = 4, BodyPartName = "Thigh"}
             };
 
-            epikinds.ForEach(x => context.EpiKind.Add(x));
+            bodyparts.ForEach(x => context.BodyParts.Add(x));
             context.SaveChanges();
 
             var priceHeader = new List<PriceHeader>
@@ -28,20 +29,20 @@ namespace EpiManager.DAL
                 new PriceHeader {PriceName = "Discount"}
             };
 
-            priceHeader.ForEach(x => context.PriceHeader.Add(x));
+            priceHeader.ForEach(x => context.PriceHeaders.Add(x));
             context.SaveChanges();
 
             var priceLines = new List<PriceLine>
             {
-                new PriceLine {PriceHeaderId = 1, EpiKindId = 1, Price = 90},
-                new PriceLine {PriceHeaderId = 1, EpiKindId = 2, Price = 150},
-                new PriceLine {PriceHeaderId = 1, EpiKindId = 3, Price = 120},
-                new PriceLine {PriceHeaderId = 1, EpiKindId = 4, Price = 80},
-
-                new PriceLine {PriceHeaderId = 2, EpiKindId = 1, Price = 9},
-                new PriceLine {PriceHeaderId = 2, EpiKindId = 2, Price = 15},
-                new PriceLine {PriceHeaderId = 2, EpiKindId = 3, Price = 12},
-                new PriceLine {PriceHeaderId = 2, EpiKindId = 4, Price = 8}
+                new PriceLine {PriceHeaderId = 1, BodyPartId = 1, Price = 90},
+                new PriceLine {PriceHeaderId = 1, BodyPartId = 2, Price = 150},
+                new PriceLine {PriceHeaderId = 1, BodyPartId = 3, Price = 120},
+                new PriceLine {PriceHeaderId = 1, BodyPartId = 4, Price = 80},
+                                                  
+                new PriceLine {PriceHeaderId = 2, BodyPartId = 1, Price = 9},
+                new PriceLine {PriceHeaderId = 2, BodyPartId = 2, Price = 15},
+                new PriceLine {PriceHeaderId = 2, BodyPartId = 3, Price = 12},
+                new PriceLine {PriceHeaderId = 2, BodyPartId = 4, Price = 8}
             };
 
             priceLines.ForEach(x => context.PriceLines.Add(x));
