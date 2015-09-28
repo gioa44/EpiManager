@@ -14,5 +14,7 @@ namespace EpiManager.Models
 
         public int PriceHeaderId { get; set; }
         public virtual PriceHeader PriceHeader { get; set; }
+
+        public virtual ICollection<AppointmentTarget> AppointmentTargets { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace EpiManager.DAL
         public DbSet<PriceLine> PriceLines { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<AppointmentTarget> AppointmentTargets { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

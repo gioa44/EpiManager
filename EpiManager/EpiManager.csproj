@@ -127,6 +127,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\AppointmentTargets.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\BodyPart.cs" />
     <Compile Include="Models\PriceHeader.cs" />

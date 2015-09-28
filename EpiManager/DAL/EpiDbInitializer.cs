@@ -71,7 +71,20 @@ namespace EpiManager.DAL
                 new Appointment { CustomerId = 2, Date = DateTime.Today.AddDays(21), PriceHeaderId = 2  }
             };
 
+
             appointments.ForEach(x => context.Appointments.Add(x));
+            context.SaveChanges();
+
+            var targets = new List<AppointmentTarget>
+            {
+                new AppointmentTarget { AppointmentId = 1, BodyPartId = 1 },
+                new AppointmentTarget { AppointmentId = 1, BodyPartId = 2 },
+
+                new AppointmentTarget { AppointmentId = 2, BodyPartId = 3 },
+                new AppointmentTarget { AppointmentId = 2, BodyPartId = 4 }
+            };
+
+            targets.ForEach(x => context.AppointmentTargets.Add(x));
             context.SaveChanges();
         }
     }
