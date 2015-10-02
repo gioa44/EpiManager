@@ -26,6 +26,7 @@ namespace EpiManager
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-datepicker.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/epi").Include(
