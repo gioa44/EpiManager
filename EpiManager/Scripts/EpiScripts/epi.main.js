@@ -1,5 +1,5 @@
 ﻿var Main = {
-    configureDatePicker: function (options) {
+    configureDatePicker: function (elementSelector, options) {
 
         var defaults = {
             format: "dd/mm/yyyy",
@@ -11,11 +11,30 @@
 
         var settings = $.extend(defaults, options);
 
-        $(document).off("focus", '.datepicker');
-        $(document).on('focus', '.datepicker', function () {
-            $(this).datepicker(settings);
-        });
+        $(elementSelector).datepicker(settings);
+
+        //$(document).off("focus", '.datepicker');
+        //$(document).on('focus', '.datepicker', function () {
+        //    $(this).datepicker(settings);
+        //});
+
+
+        $.validator.addMethod('date', function (value, element, params) {
+            if (this.optional(element)) {
+                return true;
+            };
+            var result = false;
+            try {
+                $.datepicker.parseDate(settings.parseFormat, value);
+                result = true;
+            } catch (err) {
+                result = false;
+            }
+            return result;
+        }, '');
+
     }
+
 };
 
 
