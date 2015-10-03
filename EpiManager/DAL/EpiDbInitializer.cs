@@ -7,17 +7,19 @@ using EpiManager.Models;
 namespace EpiManager.DAL
 {
 
-    public class EpiDbInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<EpiContext>
+    public class EpiDbInitializer : System.Data.Entity.CreateDatabaseIfNotExists<EpiContext>
     {
         protected override void Seed(EpiContext context)
         {
-            var bodyparts
-                = new List<BodyPart>
+            var bodyparts = new List<BodyPart>
             {
-                new BodyPart{BodyPartId = 1, BodyPartName = "Face"},
-                new BodyPart{BodyPartId = 2, BodyPartName = "Leg"},
-                new BodyPart{BodyPartId = 3, BodyPartName = "Shin"},
-                new BodyPart{BodyPartId = 4, BodyPartName = "Thigh"}
+                new BodyPart{BodyPartId = 1, BodyPartName = "Face", BodyPartDescrip = "სახე", ProcedureDurationInMinutes = 10 },
+                new BodyPart{BodyPartId = 2, BodyPartName = "Leg", BodyPartDescrip = "ფეხი", ProcedureDurationInMinutes = 60 },
+                new BodyPart{BodyPartId = 3, BodyPartName = "Shin", BodyPartDescrip = "წვივი", ProcedureDurationInMinutes = 15 },
+                new BodyPart{BodyPartId = 4, BodyPartName = "Thigh", BodyPartDescrip = "თეძო", ProcedureDurationInMinutes = 20 },
+                new BodyPart{BodyPartId = 5, BodyPartName = "Lip", BodyPartDescrip = "ტუჩი", ProcedureDurationInMinutes = 5 },
+                new BodyPart{BodyPartId = 6, BodyPartName = "Arm", BodyPartDescrip = "ხელი", ProcedureDurationInMinutes = 20 },
+                new BodyPart{BodyPartId = 7, BodyPartName = "Back", BodyPartDescrip = "ზურგი", ProcedureDurationInMinutes = 25}
             };
 
             bodyparts.ForEach(x => context.BodyParts.Add(x));
@@ -50,14 +52,14 @@ namespace EpiManager.DAL
 
             var customers = new List<Customer>
             {
-                new Customer {PriceHeaderId = 1, FirstName = "Carson", LastName = "Alexander", MobileNumber = "599222201"},
-                new Customer {PriceHeaderId = 1, FirstName = "Meredith", LastName = "Alonso", MobileNumber = "599222202"},
-                new Customer {PriceHeaderId = 1, FirstName = "Arturo", LastName = "Anand", MobileNumber = "599222203"},
-                new Customer {PriceHeaderId = 1, FirstName = "Gytis", LastName = "Barzdukas", MobileNumber = "599222204"},
-                new Customer {PriceHeaderId = 1, FirstName = "Yan", LastName = "Li", MobileNumber = "599222205"},
-                new Customer {PriceHeaderId = 1, FirstName = "Peggy", LastName = "Justice", MobileNumber = "599222206"},
-                new Customer {PriceHeaderId = 2, FirstName = "Laura", LastName = "Norman", MobileNumber = "599222207"},
-                new Customer {PriceHeaderId = 2, FirstName = "Nino", LastName = "Olivetto", MobileNumber = "599222208"}
+                new Customer {PriceHeaderId = 1, FullName = "Carson Alexander", MobileNumber = "599222201"},
+                new Customer {PriceHeaderId = 1, FullName = "Robert Deniro", MobileNumber = "599222202"},
+                new Customer {PriceHeaderId = 1, FullName = "Muhammed Alli", MobileNumber = "599222203"},
+                new Customer {PriceHeaderId = 1, FullName = "Andres Iniesta", MobileNumber = "599222204"},
+                new Customer {PriceHeaderId = 1, FullName = "Arturo Vidal", MobileNumber = "599222205"},
+                new Customer {PriceHeaderId = 1, FullName = "Zlatan Ibrahimovic", MobileNumber = "599222206"},
+                new Customer {PriceHeaderId = 2, FullName = "Julia Roberts", MobileNumber = "599222207"},
+                new Customer {PriceHeaderId = 2, FullName = "Rezo Gabriadze", MobileNumber = "599222208"}
             };
 
             customers.ForEach(x => context.Customers.Add(x));

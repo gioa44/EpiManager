@@ -40,7 +40,7 @@ namespace EpiManager.Controllers
         // GET: Appointment/Create
         public ActionResult Create()
         {
-            ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName");
+            //ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName");
             ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName");
             return View();
         }
@@ -50,7 +50,7 @@ namespace EpiManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AppointmentId,Date,CustomerId,PriceHeaderId")] Appointment appointment)
+        public ActionResult Create([Bind(Include = "Date,CustomerId,PriceHeaderId,BodyParts")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace EpiManager.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName", appointment.CustomerId);
+            //ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName", appointment.CustomerId);
             ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", appointment.PriceHeaderId);
             return View(appointment);
         }
@@ -76,7 +76,7 @@ namespace EpiManager.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName", appointment.CustomerId);
+            //ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName", appointment.CustomerId);
             ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", appointment.PriceHeaderId);
             return View(appointment);
         }
@@ -94,7 +94,7 @@ namespace EpiManager.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName", appointment.CustomerId);
+            //ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName", appointment.CustomerId);
             ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", appointment.PriceHeaderId);
             return View(appointment);
         }

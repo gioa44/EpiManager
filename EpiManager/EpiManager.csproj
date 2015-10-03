@@ -122,6 +122,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PriceHeaderController.cs" />
     <Compile Include="Controllers\PriceLineController.cs" />
+    <Compile Include="DAL\ContextHelper.cs" />
     <Compile Include="DAL\EpiContext.cs" />
     <Compile Include="DAL\EpiDbInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -139,6 +140,11 @@
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\select2-bootstrap.css" />
+    <Content Include="Content\select2-spinner.gif" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\select2.png" />
+    <Content Include="Content\select2x2.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -159,6 +165,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Plugins\select2.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

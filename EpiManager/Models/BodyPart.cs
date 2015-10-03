@@ -12,5 +12,7 @@ namespace EpiManager.Models
         public int BodyPartId { get; set; }
         public string BodyPartName { get; set; }
         public string BodyPartDescrip { get; set; }
+
+        public int ProcedureDurationInMinutes { get; set; }
     }
 }
