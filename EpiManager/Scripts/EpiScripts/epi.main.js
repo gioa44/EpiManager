@@ -31,12 +31,7 @@
         //    return result;
         //}, '');
 
-    },
-
-    confugureSelect2: function() {
-        $("select:not(.ignore)").select2({ width: "resolve" });
     }
-
 };
 
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -35,6 +36,7 @@ namespace EpiManager.Models
         #region Mapping Properties
 
         [DisplayName("ზონები")]
+        [NotMapped]
         public List<int> BodyParts { get; set; }
 
         #endregion

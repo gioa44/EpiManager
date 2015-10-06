@@ -21,6 +21,22 @@ namespace EpiManager.DAL
             }
         }
 
+        public static object CustomerFilter(string term)
+        {
+            using (var context = new EpiContext())
+            {
+                var result = context.Customers.Where(x => x.FullName.Contains(term)).Select(x => new
+                {
+                    id = x.CustomerId,
+                    text = x.FullName
+                }).ToList();
+
+                result.Add(new { id = -1, text = "ახლის დამატება" });
+
+                return result;
+            }
+        }
+
         public static List<SelectListItem> BodyPartsLookup()
         {
             using (var context = new EpiContext())

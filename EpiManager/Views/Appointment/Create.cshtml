@@ -28,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CustomerId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CustomerId, ContextHelper.CustomersLookup(), "None", new { @class = "form-control" })
+                @Html.TextBoxFor(a => a.CustomerId, new { id = "CustomerSelect2" })
                 @Html.ValidationMessageFor(model => model.CustomerId, "აირჩიეთ კლიენტი", new { @class = "text-danger" })
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PriceHeaderId, htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.DropDownList("PriceHeaderId", null, htmlAttributes: new {@class = "form-control"})
+                @Html.DropDownList("PriceHeaderId", null, htmlAttributes: new {@class = "form-control ignore"})
                 @Html.ValidationMessageFor(model => model.PriceHeaderId, "", new {@class = "text-danger"})
             </div>
         </div>
@@ -67,11 +67,38 @@
     @Scripts.Render("~/bundles/epi")
 
     <script type="text/javascript">
-        $(function() {
-            Main.configureDatePicker(null);
-            Main.confugureSelect2();
+        function newUserPopup(evt) {
+            if (evt && evt.val === "-1") {
+                alert('create new user !');
+            };
+        };
 
-            //$("select:not(.ignore)").select2({ width: "resolve" });
+
+
+        $(function() {
+            Main.configureDatePicker();
+            $("select:not(.ignore)").select2({ width: "resolve" });
+
+            //var $eventSelect = $(".select2-customer");
+            //$eventSelect.on("change", function (e) { newUserPopup(e); });
+
+            $("#CustomerSelect2").select2({
+                width: "resolve",
+                minimumInputLength: 2,
+                quietMillis: 250,
+                ajax: {
+                    url: '@Url.Action("Customers", "Epi")',
+                    dataType: 'json',
+                    data: function(term) {
+                        return {
+                            searchTerm: term
+                        };
+                    },
+                    results: function(data) {
+                        return { results: data };
+                    }
+                }
+            }).on("change", function (e) { newUserPopup(e); });
         });
     </script>
 }
