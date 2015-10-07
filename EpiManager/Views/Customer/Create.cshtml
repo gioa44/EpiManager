@@ -7,10 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm("Create", "Customer", FormMethod.Post, new {id = "customerForm"})) 
+@using (Html.BeginForm("Create", "Customer", FormMethod.Post, new { id = "customerForm" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Customer</h4>
         <hr />
@@ -43,7 +43,7 @@
             <div class="col-md-offset-2 col-md-10">
                 @*<input type="submit" value="Create" class="btn btn-default"/>*@
                 <button id="addCustomerBtn" type="submit" class="btn btn-primary">Save</button>
-                
+
             </div>
         </div>
     </div>
@@ -53,35 +53,12 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/epi")
 
-    <script type="text/javascript">
-        var formId = "#customerForm";
-
-        $(function () {
-            $(formId).on('submit', function (event) {
-                event.preventDefault();
-            });
-
-            $("#addCustomerBtn").click(function() {
-                var form = $(formId);
-
-                var submitUrl = form.attr("action");
-
-                $.ajax({
-                    async: false,
-                    type: "POST",
-                    url: submitUrl,
-                    data: form.serialize(),
-                    dataType: "text",
-                    processData: false,
-                    contentType: "application/x-www-form-urlencoded"
-                }).done(function (data) {
-                    $("myModal").modal("hide");
-                });
-            });
-        });
-
-    </script>
-}
+<script type="text/javascript">
+    $(function () {
+        Main.InitOnFlyCustomerCreation("#customerForm");
+    });
+</script>

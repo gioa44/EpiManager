@@ -59,7 +59,16 @@ namespace EpiManager.Controllers
             }
 
             //ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", customer.PriceHeaderId);
-            return new JsonResult { Data = customer.FullName, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            
+            return new JsonResult
+            {
+                Data = new
+                {
+                    id = customer.CustomerId,
+                    text = customer.FullName
+                },
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
         }
 
         // GET: Customer/Edit/5

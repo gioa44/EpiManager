@@ -28,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CustomerId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(a => a.CustomerId, new { id = "CustomerSelect2" })
+                @Html.TextBoxFor(a => a.CustomerId, new { @class = "customer-select2" })
                 @Html.ValidationMessageFor(model => model.CustomerId, "აირჩიეთ კლიენტი", new { @class = "text-danger" })
             </div>
         </div>
@@ -93,34 +93,14 @@
     <script type="text/javascript">
         function newUserPopup(evt) {
             if (evt && evt.val === "-1") {
-                alert('create new user !');
+                $("#myModal").modal();
             };
         };
 
-        $(function() {
-            Main.configureDatePicker();
-            $("select:not(.ignore)").select2({ width: "resolve" });
-
-            //var $eventSelect = $(".select2-customer");
-            //$eventSelect.on("change", function (e) { newUserPopup(e); });
-
-            $("#CustomerSelect2").select2({
-                width: "resolve",
-                minimumInputLength: 2,
-                quietMillis: 250,
-                ajax: {
-                    url: '@Url.Action("Customers", "Epi")',
-                    dataType: 'json',
-                    data: function(term) {
-                        return {
-                            searchTerm: term
-                        };
-                    },
-                    results: function(data) {
-                        return { results: data };
-                    }
-                }
-            }).on("change", function (e) { newUserPopup(e); });
+        $(function () {
+            Main.InitDatePicker();
+            Main.InitSelect2();
+            Main.InitCustomerSelector().on("change", function (e) { newUserPopup(e); });;
         });
-    </script>
+</script>
 }

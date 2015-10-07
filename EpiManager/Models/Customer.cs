@@ -14,12 +14,14 @@ namespace EpiManager.Models
         //public string LastName { get; set; }
 
         //[StringLength(9, MinimumLength = 9)]
+        [Required]
         public string MobileNumber { get; set; }
 
         //[Display(Name = "Full Name")]
+        [Required]
         public string FullName { get; set; }
 
-
+        [Required]
         public int PriceHeaderId { get; set; }
         public virtual PriceHeader PriceHeader { get; set; }
     }
