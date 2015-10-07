@@ -61,10 +61,10 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#NewCustomerModal">Open Modal</button>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="NewCustomerModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -93,7 +93,7 @@
     <script type="text/javascript">
         function newUserPopup(evt) {
             if (evt && evt.val === "-1") {
-                $("#myModal").modal();
+                $("#NewCustomerModal").modal();
             };
         };
 

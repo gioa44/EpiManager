@@ -36,7 +36,7 @@
                 processData: false,
                 contentType: "application/x-www-form-urlencoded"
             }).done(function(data) {
-                $("#myModal").modal("hide");
+                $("#NewCustomerModal").modal("hide");
 
                 if (!data)
                     return;
