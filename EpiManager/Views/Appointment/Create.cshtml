@@ -100,6 +100,7 @@
         $(function () {
             Main.InitDatePicker();
             Main.InitSelect2();
+            Main.InitOnFlyCustomerCreation("#customerForm"); // #customerForm is located in "/Customer/Create" which is injected on this view
             Main.InitCustomerSelector().on("change", function (e) { newUserPopup(e); });;
         });
 </script>
