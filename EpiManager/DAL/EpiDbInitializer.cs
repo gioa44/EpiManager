@@ -7,19 +7,54 @@ using EpiManager.Models;
 namespace EpiManager.DAL
 {
 
-    public class EpiDbInitializer : System.Data.Entity.CreateDatabaseIfNotExists<EpiContext>
+    public class EpiDbInitializer : System.Data.Entity.DropCreateDatabaseAlways<EpiContext>
     {
         protected override void Seed(EpiContext context)
         {
             var bodyparts = new List<BodyPart>
             {
-                new BodyPart{BodyPartId = 1, BodyPartName = "Face", BodyPartDescrip = "სახე", ProcedureDurationInMinutes = 10 },
-                new BodyPart{BodyPartId = 2, BodyPartName = "Leg", BodyPartDescrip = "ფეხი", ProcedureDurationInMinutes = 60 },
-                new BodyPart{BodyPartId = 3, BodyPartName = "Shin", BodyPartDescrip = "წვივი", ProcedureDurationInMinutes = 15 },
-                new BodyPart{BodyPartId = 4, BodyPartName = "Thigh", BodyPartDescrip = "თეძო", ProcedureDurationInMinutes = 20 },
-                new BodyPart{BodyPartId = 5, BodyPartName = "Lip", BodyPartDescrip = "ტუჩი", ProcedureDurationInMinutes = 5 },
-                new BodyPart{BodyPartId = 6, BodyPartName = "Arm", BodyPartDescrip = "ხელი", ProcedureDurationInMinutes = 20 },
-                new BodyPart{BodyPartId = 7, BodyPartName = "Back", BodyPartDescrip = "ზურგი", ProcedureDurationInMinutes = 25}
+                new BodyPart{BodyPartId = 1, BodyPartName = "", BodyPartDescrip = "სახე მთლიანი", ProcedureDurationInMinutes = 10, Gender = "M"},
+                new BodyPart{BodyPartId = 2, BodyPartName = "", BodyPartDescrip = "ღაწვები", ProcedureDurationInMinutes = 60, Gender = "M" },
+                new BodyPart{BodyPartId = 3, BodyPartName = "", BodyPartDescrip = "ყელი", ProcedureDurationInMinutes = 15, Gender = "M" },
+                new BodyPart{BodyPartId = 4, BodyPartName = "", BodyPartDescrip = "კისერი", ProcedureDurationInMinutes = 20, Gender = "M" },
+                new BodyPart{BodyPartId = 5, BodyPartName = "", BodyPartDescrip = "შუბლი", ProcedureDurationInMinutes = 5, Gender = "M" },
+                new BodyPart{BodyPartId = 6, BodyPartName = "", BodyPartDescrip = "გულმკერდი", ProcedureDurationInMinutes = 20, Gender = "M" },
+                new BodyPart{BodyPartId = 7, BodyPartName = "", BodyPartDescrip = "მუცელი", ProcedureDurationInMinutes = 25, Gender = "M" },
+                new BodyPart{BodyPartId = 8, BodyPartName = "", BodyPartDescrip = "გულმკერდი და მუცელი ერთად", ProcedureDurationInMinutes = 10, Gender = "M"},
+                new BodyPart{BodyPartId = 9, BodyPartName = "", BodyPartDescrip = "მხრები", ProcedureDurationInMinutes = 60, Gender = "M" },
+                new BodyPart{BodyPartId = 10, BodyPartName = "", BodyPartDescrip = "წელი", ProcedureDurationInMinutes = 15, Gender = "M" },
+                new BodyPart{BodyPartId = 11, BodyPartName = "", BodyPartDescrip = "მთლიანი ზურგი", ProcedureDurationInMinutes = 20, Gender = "M" },
+                new BodyPart{BodyPartId = 12, BodyPartName = "", BodyPartDescrip = "ფეხი მთლიანი", ProcedureDurationInMinutes = 5, Gender = "M" },
+                new BodyPart{BodyPartId = 13, BodyPartName = "", BodyPartDescrip = "ბარძაყი", ProcedureDurationInMinutes = 20, Gender = "M" },
+                new BodyPart{BodyPartId = 14, BodyPartName = "", BodyPartDescrip = "წვივი", ProcedureDurationInMinutes = 25, Gender = "M" },
+                new BodyPart{BodyPartId = 15, BodyPartName = "", BodyPartDescrip = "ხელი მთლიანი", ProcedureDurationInMinutes = 60, Gender = "M" },
+                new BodyPart{BodyPartId = 16, BodyPartName = "", BodyPartDescrip = "ხელი ნახევარი", ProcedureDurationInMinutes = 15, Gender = "M" },
+                new BodyPart{BodyPartId = 17, BodyPartName = "", BodyPartDescrip = "იღლია", ProcedureDurationInMinutes = 20, Gender = "M" },
+                new BodyPart{BodyPartId = 18, BodyPartName = "", BodyPartDescrip = "ხელის მტევანი", ProcedureDurationInMinutes = 5, Gender = "M" },
+
+                new BodyPart{BodyPartId = 19, BodyPartName = "", BodyPartDescrip = "ფეხები მთლიანად", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 20, BodyPartName = "", BodyPartDescrip = "წვივები", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 21, BodyPartName = "", BodyPartDescrip = "ბარძაყები", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 22, BodyPartName = "", BodyPartDescrip = "მთლიანი სახე", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 23, BodyPartName = "", BodyPartDescrip = "შუბლი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 24, BodyPartName = "", BodyPartDescrip = "ლოყები", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 25, BodyPartName = "", BodyPartDescrip = "ტუჩი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 26, BodyPartName = "", BodyPartDescrip = "ბაკები", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 27, BodyPartName = "", BodyPartDescrip = "ნიკაპი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 28, BodyPartName = "", BodyPartDescrip = "ყელი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 29, BodyPartName = "", BodyPartDescrip = "კისერი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 30, BodyPartName = "", BodyPartDescrip = "ხელები მთლიანად", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 31, BodyPartName = "", BodyPartDescrip = "ხელები  ნახევარი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 32, BodyPartName = "", BodyPartDescrip = "ორივე იღლია", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 33, BodyPartName = "", BodyPartDescrip = "გულ-მკერდი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 34, BodyPartName = "", BodyPartDescrip = "მკერდის შუა ზოლი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 35, BodyPartName = "", BodyPartDescrip = "მუცელი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 36, BodyPartName = "", BodyPartDescrip = "მუცლის თეთრი ხაზი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 37, BodyPartName = "", BodyPartDescrip = "წელი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 38, BodyPartName = "", BodyPartDescrip = "ზედაპირული  ბიკინი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 39, BodyPartName = "", BodyPartDescrip = "ღრმა ბიკინი", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 40, BodyPartName = "", BodyPartDescrip = "დუნდულები", ProcedureDurationInMinutes = 20, Gender = "F" },
+                new BodyPart{BodyPartId = 41, BodyPartName = "", BodyPartDescrip = "უკანა ზოლი ", ProcedureDurationInMinutes = 20, Gender = "F" }
             };
 
             bodyparts.ForEach(x => context.BodyParts.Add(x));
@@ -27,7 +62,7 @@ namespace EpiManager.DAL
 
             var priceHeader = new List<PriceHeader>
             {
-                new PriceHeader {PriceName = "General"},
+                new PriceHeader {PriceName = "Common"},
                 new PriceHeader {PriceName = "Discount"}
             };
 
@@ -67,10 +102,10 @@ namespace EpiManager.DAL
 
             var appointments = new List<Appointment>
             {
-                new Appointment { CustomerId = 1, Date = DateTime.Today.AddDays(1), PriceHeaderId = 2 },
-                new Appointment { CustomerId = 1, Date = DateTime.Today.AddDays(2), PriceHeaderId = 2  },
-                new Appointment { CustomerId = 2, Date = DateTime.Today.AddDays(20), PriceHeaderId = 2  },
-                new Appointment { CustomerId = 2, Date = DateTime.Today.AddDays(21), PriceHeaderId = 2  }
+                new Appointment { CustomerId = 1, Date = DateTime.Today.AddDays(1), Time = new TimeSpan(12, 20, 0) },
+                new Appointment { CustomerId = 1, Date = DateTime.Today.AddDays(2), Time = new TimeSpan(13, 40, 0) },
+                new Appointment { CustomerId = 2, Date = DateTime.Today.AddDays(20), Time = new TimeSpan(14, 15, 0) },
+                new Appointment { CustomerId = 2, Date = DateTime.Today.AddDays(21), Time = new TimeSpan(16, 30, 0) }
             };
 
 

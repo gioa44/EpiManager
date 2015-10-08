@@ -16,19 +16,14 @@ namespace EpiManager.Models
         [DisplayName("თარიღი")]
         public DateTime? Date { get; set; }
 
+        public TimeSpan Time { get; set; }
+        
         [DisplayName("კლიენტი")]
         public int CustomerId { get; set; }
-
-        [DisplayName("ფასის კატეგორია")]
-        public int PriceHeaderId { get; set; }
 
         public bool? CustomerNeverCame { get; set; }
         public string ImpulsesUsed { get; set; }
 
-
-
-
-        public virtual PriceHeader PriceHeader { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual ICollection<AppointmentTarget> AppointmentTargets { get; set; }
 

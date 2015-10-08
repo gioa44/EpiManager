@@ -18,7 +18,7 @@ namespace EpiManager.Controllers
         // GET: Appointment
         public ActionResult Index()
         {
-            var appointments = db.Appointments.Include(a => a.Customer).Include(a => a.PriceHeader);
+            var appointments = db.Appointments.Include(a => a.Customer);
             return View(appointments.ToList());
         }
 
@@ -60,7 +60,6 @@ namespace EpiManager.Controllers
             }
 
             //ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName", appointment.CustomerId);
-            ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", appointment.PriceHeaderId);
             return View(appointment);
         }
 
@@ -77,7 +76,6 @@ namespace EpiManager.Controllers
                 return HttpNotFound();
             }
             //ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName", appointment.CustomerId);
-            ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", appointment.PriceHeaderId);
             return View(appointment);
         }
 
@@ -95,7 +93,6 @@ namespace EpiManager.Controllers
                 return RedirectToAction("Index");
             }
             //ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName", appointment.CustomerId);
-            ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", appointment.PriceHeaderId);
             return View(appointment);
         }
 
