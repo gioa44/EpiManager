@@ -24,18 +24,24 @@ namespace EpiManager
                       "~/Scripts/bootstrap-datepicker.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/bootstrap-datepicker.css",
-                      "~/Content/select2.css",
-                      "~/Content/select2-bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/datetimepicker").Include(
+                        "~/Scripts/moment.min.js",
+                        "~/Scripts/moment-with-locales.min.js",
+                        "~/Scripts/bootstrap-datetimepicker.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/epi").Include(
                         "~/Scripts/EpiScripts/*.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/plugins").Include(
                         "~/Scripts/Plugins/select2.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-datepicker.css",
+                      "~/Content/bootstrap-datetimepicker.min.css",
+                      "~/Content/select2.css",
+                      "~/Content/select2-bootstrap.css",
+                      "~/Content/site.css"));
         }
     }
 }

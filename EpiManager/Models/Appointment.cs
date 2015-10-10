@@ -12,9 +12,9 @@ namespace EpiManager.Models
     {
         public int AppointmentId { get; set; }
          
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DisplayName("თარიღი")]
-        public DateTime? Date { get; set; }
+        public DateTime Date { get; set; }
 
         public TimeSpan Time { get; set; }
         
