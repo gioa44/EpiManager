@@ -21,6 +21,9 @@ namespace EpiManager.Models
         [Required]
         public string FullName { get; set; }
 
+        [StringLength(1), Column(TypeName = "char")]
+        public string Gender { get; set; }
+
         [Required]
         public int PriceHeaderId { get; set; }
         public virtual PriceHeader PriceHeader { get; set; }

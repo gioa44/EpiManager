@@ -54,10 +54,10 @@
 
     InitCustomerSelector: function () {
         var select2Element = $(".customer-select2").select2({
-            width: "resolve",
+            width: "280px",
             minimumInputLength: 2,
             delay: 250,
-            placeholder: "აირჩიეთ კლიენტი",
+            placeholder: "აირჩიეთ",
             ajax: {
                 url: "/Epi/Customers",
                 dataType: "json",

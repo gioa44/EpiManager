@@ -22,25 +22,19 @@
             <div class="col-md-10">
                 @*@Html.TextBoxFor(model => model.Date, "{0:dd/MM/yyyy}", new { placeholder = "Now", @class = "datepicker form-control" })*@
 
-                
-
-
-                <div class='input-group date' id='appointmentDateTime'>
+                <div class='input-group date datetimepick' id='appointmentDateTime'>
                     @Html.TextBoxFor(model => model.Date, new { @class = "form-control" })
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
-                    
-
-
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CustomerId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(a => a.CustomerId, new { @class = "customer-select2" })
+                @Html.TextBoxFor(a => a.CustomerId, htmlAttributes: new { @class = "customer-select2" })
                 @Html.ValidationMessageFor(model => model.CustomerId, "აირჩიეთ კლიენტი", new { @class = "text-danger" })
             </div>
         </div>
