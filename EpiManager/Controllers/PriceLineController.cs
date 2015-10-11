@@ -49,7 +49,7 @@ namespace EpiManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PriceLineId,PriceHeaderId,BodyPartId,Price")] PriceLine priceLine)
+        public ActionResult Create([Bind(Include = "PriceHeaderId,BodyPartId,Price")] PriceLine priceLine)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace EpiManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PriceLineId,PriceHeaderId,BodyPartId,Price")] PriceLine priceLine)
+        public ActionResult Edit([Bind(Include = "PriceHeaderId,BodyPartId,Price")] PriceLine priceLine)
         {
             if (ModelState.IsValid)
             {

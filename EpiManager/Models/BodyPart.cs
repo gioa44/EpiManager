@@ -11,12 +11,15 @@ namespace EpiManager.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int BodyPartId { get; set; }
+        [StringLength(100)]
         public string BodyPartName { get; set; }
+        [StringLength(100)]
         public string BodyPartDescrip { get; set; }
 
         [StringLength(1), Column(TypeName = "char")]
         public string Gender { get; set; }
         public int ProcedureDurationInMinutes { get; set; }
 
+        public int MigrId { get; set; }
     }
 }

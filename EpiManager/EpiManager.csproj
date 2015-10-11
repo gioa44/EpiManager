@@ -155,6 +155,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Migration\Migration.sql" />
+    <Content Include="Migration\Move Data from staging in dev.sql" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
@@ -204,11 +206,6 @@
     <Content Include="Views\PriceHeader\Details.cshtml" />
     <Content Include="Views\PriceHeader\Edit.cshtml" />
     <Content Include="Views\PriceHeader\Index.cshtml" />
-    <Content Include="Views\PriceLine\Create.cshtml" />
-    <Content Include="Views\PriceLine\Delete.cshtml" />
-    <Content Include="Views\PriceLine\Details.cshtml" />
-    <Content Include="Views\PriceLine\Edit.cshtml" />
-    <Content Include="Views\PriceLine\Index.cshtml" />
     <Content Include="Views\Appointment\Create.cshtml" />
     <Content Include="Views\Appointment\Delete.cshtml" />
     <Content Include="Views\Appointment\Details.cshtml" />

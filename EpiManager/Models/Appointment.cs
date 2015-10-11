@@ -16,16 +16,19 @@ namespace EpiManager.Models
         [DisplayName("თარიღი")]
         public DateTime Date { get; set; }
 
-        public TimeSpan Time { get; set; }
-        
         [DisplayName("კლიენტი")]
         public int CustomerId { get; set; }
 
         public bool? CustomerNeverCame { get; set; }
-        public string ImpulsesUsed { get; set; }
+
+        public bool? StraightVisit { get; set; }
+        public int UserId { get; set; }
 
         public virtual Customer Customer { get; set; }
         public virtual ICollection<AppointmentTarget> AppointmentTargets { get; set; }
+
+        public decimal IntendPrice { get; set; }
+        public decimal ActualPrice { get; set; }
 
 
         #region Mapping Properties
