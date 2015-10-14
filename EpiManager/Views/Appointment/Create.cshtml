@@ -64,19 +64,17 @@
 <!-- Modal -->
 <div id="NewCustomerModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">ახალი კლიენტის დამატება</h4>
             </div>
             <div class="modal-body">
-                @Html.Partial("../Customer/Create")
+                @Html.Partial("../Customer/CreateModal")
             </div>
-            <div class="modal-footer">
+            @*<div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+            </div>*@
         </div>
 
     </div>
@@ -101,7 +99,7 @@
             //Main.InitDatePicker();
             Main.InitSelect2();
             Main.InitOnFlyCustomerCreation("#customerForm"); // #customerForm is located in "/Customer/Create" which is injected on this view
-            Main.InitCustomerSelector().on("change", function(e) { newUserPopup(e); });;
+            Main.InitCustomerSelector().on("change", function (e) { newUserPopup(e); });
         });
     </script>
 }

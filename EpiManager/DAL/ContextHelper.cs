@@ -49,5 +49,26 @@ namespace EpiManager.DAL
             }
         }
 
+        public static List<SelectListItem> PriceHeaders()
+        {
+            using (var context = new EpiContext())
+            {
+                return context.PriceHeaders.Select(x => new SelectListItem
+                {
+                    Text = x.PriceDescrip,
+                    Value = x.PriceHeaderId.ToString()
+                }).ToList();
+            }
+        }
+
+
+        public static List<SelectListItem> Genders()
+        {
+            return new List<SelectListItem>
+            {
+                new SelectListItem { Text = "მდედრობითი", Value = "F"},
+                new SelectListItem { Text = "მამრობითი", Value = "M"}
+            };
+        }
     }
 }

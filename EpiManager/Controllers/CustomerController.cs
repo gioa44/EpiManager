@@ -40,7 +40,13 @@ namespace EpiManager.Controllers
         // GET: Customer/Create
         public ActionResult Create()
         {
-            ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName");
+            //ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName");
+            //ViewBag.Gender = ContextHelper.Genders();
+            return View();
+        }
+
+        public ActionResult CreateModal()
+        {
             return View();
         }
 
@@ -49,17 +55,14 @@ namespace EpiManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MobileNumber,FullName,PriceHeaderId")] Customer customer)
+        public ActionResult CreateModal([Bind(Include = "MobileNumber,FullName,PriceHeaderId,Gender")] Customer customer)
         {
             if (ModelState.IsValid)
             {
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                //return RedirectToAction("Index");
             }
 
-            //ViewBag.PriceHeaderId = new SelectList(db.PriceHeaders, "PriceHeaderId", "PriceName", customer.PriceHeaderId);
-            
             return new JsonResult
             {
                 Data = new
