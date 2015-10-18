@@ -19,7 +19,7 @@ namespace EpiManager.Controllers
         public ActionResult Index()
         {
             var appointments = db.Appointments.Include(a => a.Customer);
-            return View(appointments.ToList());
+            return View(appointments.OrderByDescending(x=>x.Date).ToList());
         }
 
         // GET: Appointment/Details/5
@@ -50,12 +50,15 @@ namespace EpiManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Date,CustomerId,PriceHeaderId,BodyParts")] Appointment appointment)
+        public ActionResult Create(/*[Bind(Include = "Date,CustomerId,InAdvance,BodyParts")]*/ Appointment appointment)
         {
             if (ModelState.IsValid)
             {
+                appointment.UserId = -1;
+                appointment.CreateDate = DateTime.Now;
                 db.Appointments.Add(appointment);
-                //db.SaveChanges();
+                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 

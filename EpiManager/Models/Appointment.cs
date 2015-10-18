@@ -12,7 +12,7 @@ namespace EpiManager.Models
     {
         public int AppointmentId { get; set; }
          
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm }", ApplyFormatInEditMode = true)]
         [DisplayName("თარიღი")]
         public DateTime Date { get; set; }
 
@@ -21,8 +21,13 @@ namespace EpiManager.Models
 
         public bool? CustomerNeverCame { get; set; }
 
-        public bool? StraightVisit { get; set; }
+        [Required]
+        [DisplayName("წინასწარ ჩაწერა")]
+        public bool InAdvance { get; set; }
         public int UserId { get; set; }
+
+        //TODO Default to current date and time
+        public DateTime CreateDate { get; set; }
 
         public virtual Customer Customer { get; set; }
         public virtual ICollection<AppointmentTarget> AppointmentTargets { get; set; }

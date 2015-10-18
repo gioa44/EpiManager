@@ -11,11 +11,7 @@ namespace EpiManager.Models
     public class Customer
     {
         public int CustomerId { get; set; }
-        //public string FirstName { get; set; }
-        //public string LastName { get; set; }
-
-        //[StringLength(9, MinimumLength = 9)]
-        [Required]
+        
         [StringLength(50)]
         [DisplayName("მობილური")]
         public string MobileNumber { get; set; }
@@ -31,6 +27,7 @@ namespace EpiManager.Models
         public string Gender { get; set; }
 
         [StringLength(400)]
+        [DisplayName("კომენტარი")]
         public string Note { get; set; }
 
         [Required]
